@@ -1,0 +1,19 @@
+
+.header{
+  grid-area:h;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jpnlc-title {
+  color: #606060;
+  font-family: "Arial Black", Gadget, sans-serif;
+  font-size:2em;
+  text-align: center;
+}
+@media only screen and (max-width: 600px) {
+
+  .jpnlc-title {
+    font-size:1.5em;
+  }
+}
