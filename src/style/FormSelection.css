@@ -1,0 +1,36 @@
+.form-selection-container{
+  display: grid;
+  grid-template: 50px auto / 1fr;
+  justify-content: start;
+}
+
+.form-selection-checkboxes{
+  display: grid;
+  grid-template: 1fr / 1fr;
+  justify-content: start;
+}
+
+.form-checkbox-container {
+  padding-top: 8px;
+  cursor: pointer;
+}
+
+.form-checkbox{
+  padding-right: 10px;
+  font-size: 1.3em;
+  vertical-align: middle;
+}
+
+.fa-square{
+  color: lightgray;
+}
+.fa-check-square{
+  color: rgb(18, 107, 223);
+}
+.form-checkbox-name{
+  font-size: 1.1em;
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.4em;
+  user-select: none; 
+}
