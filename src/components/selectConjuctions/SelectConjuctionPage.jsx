@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormSelection from './FormsSelection';
+import { getAvailableForms } from '../../util/requests';
 
 export default class SelectConjuctionPage extends Component {
   constructor(props) {
@@ -9,28 +10,26 @@ export default class SelectConjuctionPage extends Component {
       sections: {
         from: {
           name: 'from',
-          forms: [
-            {
-              name: 'plain',
-              id: 'plain',
-              selected: true,
-            },
-            {
-              name: 'plain polite',
-              id: 'polite affirmative',
-            },
-            {
-              name: 'plain negative',
-              id: 'plain negative',
-            },
-            {
-              name: 'ば (hypothetical)',
-              id: 'hypothetical',
-            },
-          ],
+          forms: [],
+        },
+        to: {
+          name: 'to',
+          forms: [],
         },
       },
     };
+  }
+
+  componentDidMount() {
+    const sections = JSON.parse(JSON.stringify(this.state.sections));
+    getAvailableForms()
+      .then((res) => {
+        const availableForms = res.data;
+        Object.keys(this.state.sections).forEach((section) => {
+          sections[section].forms = availableForms;
+        });
+        this.setState({ sections });
+      });
   }
 
   onCheckboxClick(id, sectionName) {
@@ -42,6 +41,7 @@ export default class SelectConjuctionPage extends Component {
     });
     this.setState({ sections });
   }
+
 
   render() {
     const formContainers = Object.keys(this.state.sections).map(section => (
