@@ -1,31 +1,48 @@
 import React, { Component } from 'react';
 import '../../style/FormSelection.css';
 
+export const ALL_SELECTED_ID = 'allSelected';
+
 export default class FormSelection extends Component {
   constructor(props) {
     super(props);
     this.createCheckbox = this.createCheckbox.bind(this);
   }
 
-  createCheckbox() {
-    return this.props.forms.map((form) => {
-      const id = `${form.id}`;
-      const checkboxIcon = form.selected ?
-        <i className="fas fa-check-square form-checkbox" /> :
-        <i className="fas fa-square form-checkbox" />;
+  createCheckbox(form) {
+    const id = `${form.id}`;
+    if (form.selected) {
       return (
-      // <label htmlFor={id} key={id}>
-        <div key={id} className="form-checkbox-container" onClick={() => this.props.onClick(id, this.props.section)}>
-          {checkboxIcon}
+        <div
+          key={id}
+          className="form-checkbox-container form-checkbox-container-selected"
+          onClick={() => this.props.onClick(id, this.props.section)}
+        >
+          <i className="fas fa-check-square form-checkbox" />
           <span className="form-checkbox-name">{form.name}</span>
-        </div>
-      // </label>
-      );
+        </div>);
+    }
+    return (
+      <div
+        key={id}
+        className="form-checkbox-container"
+        onClick={() => this.props.onClick(id, this.props.section)}
+      >
+        <i className="fas fa-square form-checkbox" />
+        <span className="form-checkbox-name">{form.name}</span>
+      </div>);
+  }
+
+  createSelectAllCheckbox() {
+    const checkboxText = this.props.allSelected ? 'Unselect All' : 'Select All';
+    return this.createCheckbox({
+      id: ALL_SELECTED_ID, section: this.props.section, name: checkboxText, selected: this.props.allSelected,
     });
   }
 
   render() {
-    const checkboxes = this.createCheckbox();
+    const selectAllCheckbox = this.createSelectAllCheckbox();
+    const formsCheckboxes = this.props.forms.map(form => (this.createCheckbox(form)));
     const section = this.props.section.charAt(0).toUpperCase() + this.props.section.substr(1);
     return (
       <div className="form-selection-container">
@@ -33,7 +50,8 @@ export default class FormSelection extends Component {
           <h2>{section}</h2>
         </div>
         <div className="form-selection-checkboxes">
-          {checkboxes}
+          {selectAllCheckbox}
+          {formsCheckboxes}
         </div>
       </div>
     );

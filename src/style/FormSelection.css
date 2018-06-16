@@ -2,17 +2,32 @@
   display: grid;
   grid-template: 50px auto / 1fr;
   justify-content: start;
+  max-width: 400px;
+  row-gap: 10px;
 }
 
 .form-selection-checkboxes{
   display: grid;
   grid-template: 1fr / 1fr;
-  justify-content: start;
+  height: 400px;
+  overflow: auto;
+  background-color: #ecf7ff;
+ 
 }
 
 .form-checkbox-container {
-  padding-top: 8px;
   cursor: pointer;
+  height: 26px;
+  display: flex;
+  align-items: center;
+}
+
+.form-checkbox-container:first-child{
+  background-color: rgba(141, 180, 224, 0.623);
+}
+
+.form-checkbox-container-selected{
+  background-color: #c7d3db;
 }
 
 .form-checkbox{
@@ -28,9 +43,13 @@
   color: rgb(18, 107, 223);
 }
 .form-checkbox-name{
-  font-size: 1.1em;
+  font-size: 1em;
   display: inline-flex;
   align-items: center;
-  min-height: 1.4em;
   user-select: none; 
+
+}
+
+.form-selection-title{
+  text-align: center;
 }

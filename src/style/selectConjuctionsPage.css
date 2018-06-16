@@ -1,0 +1,27 @@
+.select-conjuctions{
+  display: flex;
+  justify-content:space-evenly;
+}
+
+.submit-conjuction-btn{
+  height: 45px;
+  background: #3cb0fd;
+  border-radius: 28px;
+  border-width: 1px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  box-shadow: none;
+  border-style: double;
+  margin-top: 45px;
+}
+
+.submit-conjuction-btn:hover{
+  background: #32a1eb;
+}
+.submit-conjuction-btn:active{
+  background: #1285d1;
+  
+}

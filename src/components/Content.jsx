@@ -1,9 +1,9 @@
 import React from 'react';
-import SelectConjuctionPage from './selectConjuctions/SelectConjuctionPage';
+import SelectConjuctionsPage from './selectConjuctions/SelectConjuctionsPage';
 
 const Content = () => (
   <div className="content">
-    <SelectConjuctionPage />
+    <SelectConjuctionsPage />
   </div>
 );
 
