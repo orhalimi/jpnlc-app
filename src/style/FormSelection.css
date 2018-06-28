@@ -4,6 +4,12 @@
   justify-content: start;
   max-width: 400px;
   row-gap: 10px;
+  margin: 0 20px 0 20px;
+}
+@media only screen and (max-width: 800px) {
+  .form-selection-container{
+    margin: 0 20px 0 20px;
+  }
 }
 
 .form-selection-checkboxes{

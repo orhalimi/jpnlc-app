@@ -1,6 +1,6 @@
 .container {
   display: grid;
-  grid-template: 150px auto 100px/repeat(4,1fr);
+  grid-template: 120px auto 100px/repeat(4,1fr);
   grid-template-areas: 
   "h h h h"
   "c c c c"

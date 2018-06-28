@@ -88,7 +88,9 @@ export default class SelectConjuctionsPage extends Component {
       <div className="select-conjuctions">
         {FROMFormSection}
         <button className="submit-conjuction-btn" type="button">
-         START SESSION
+          <span>
+           START SESSION
+          </span>
         </button >
         {TOFormSection}
       </div>
