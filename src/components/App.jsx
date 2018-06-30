@@ -10,6 +10,7 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <Header />
+          {console.log(process.env.NODE_ENV)}
           <Content />
         </div>
       </div>
