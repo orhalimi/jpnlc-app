@@ -41,5 +41,9 @@
     "url": "https://github.com/orhalimi/jpnlc-app/issues"
   },
   "homepage": "https://jpnlc-app.herokuapp.com",
+  "engines":{
+    "node": "6.10.2",
+    "npm": "6.1.0"
+  },
   "description": ""
 }
