@@ -10,7 +10,6 @@ class App extends Component {
       <div className="App">
         <div className="container">
           <Header />
-          {console.log(process.env)}
           <Content />
         </div>
       </div>
